@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+
+    <a class="navbar-brand"  routerLink="/Home">
+      <img src="../../../assets/focus logo.png" width="110px" height="auto">
+    </a>
+    
+  
+    
+    <button class="navbar-toggler" type="button"
+            (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
+    <div class="collapse navbar-collapse"
+         [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/Gallery">Home</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/About">Contact Us</a>
+        </li>
+        
+          
+      </ul>
+      <button class="btn f-btn">Download Now</button>
+    </div>
+
+
+  </nav>

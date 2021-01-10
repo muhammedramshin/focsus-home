@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "focus-home"
+  "defaultProject": "focus-home",
+  "cli": {
+    "analytics": false
+  }
 }

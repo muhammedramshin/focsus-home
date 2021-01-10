@@ -1,0 +1,38 @@
+h1{
+    color: #006353;
+}
+.bg-net{
+    height: inherit;
+    position: absolute;
+    
+    bottom: 0%;
+    z-index: -1;
+}
+.bg-net img{
+    bottom: 0;
+    z-index: 0;
+}
+.appinhand-img{
+    z-index: 999;
+}
+.m{
+    position: relative;
+    height:inherit;
+    min-height: 100%;
+    width: 100%;
+}
+.m-1{
+    height: inherit;
+}
+.features-sec{
+    background-color: #349283;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.f-btn{
+    background-color: #349283;
+    border-radius: 20px;
+    color: white;
+}
