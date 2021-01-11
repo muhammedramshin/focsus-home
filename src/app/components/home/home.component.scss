@@ -1,6 +1,7 @@
-h1{
+h1,h2,h3,h4,h5{
     color: #006353;
 }
+
 .bg-net{
     height: inherit;
     position: absolute;
@@ -27,12 +28,57 @@ h1{
 .features-sec{
     background-color: #349283;
     color: white;
-    padding: 20px;
+    
     text-align: center;
+}
+.features-sec1{
+    background-color: #349283;
+    color: white;
+    
+    text-align: center;
+}
+.features-sec h4{
+    color: white;
+}
+.features-sec1 h4{
+    color: white;
 }
 
 .f-btn{
     background-color: #349283;
     border-radius: 20px;
     color: white;
+}
+
+.div-center{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+.bg-img1{
+    background-image: url(../../../assets/featuresicon-1.png);
+}
+.bg-img2{
+    background-image: url(../../../assets/featuresicon-2.png);
+
+}
+
+@media only screen and (min-width: 800px) {
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+}
+::ng-deep .ng-image-slider .ng-image-slider-container .main .main-inner .img-div.image-popup{
+    box-shadow: none!important;
+}
+
+::ng-deep .ng-image-slider .ng-image-slider-container .main .main-inner .img-div img, .ng-image-slider .ng-image-slider-container .main .main-inner .img-div video{
+    left: 40px!important;
 }
