@@ -1,0 +1,195 @@
+<div class="form-out">
+
+<div class="container p-5 imgbox">
+  <div class="uploadfilecontainer file-wrap" appDragDrop (onFileDropped)="uploadImage($event)">
+    <label id="#bb" style="margin: 0;cursor: pointer;">
+        <span *ngIf="!imageUploaded">Upload Your Image (click here)</span>
+        
+
+
+        <span id="filename1" class="filenamespan"></span>
+        <input (change)="uploadImage($event.target.files)" required="" type="file" id="File_1" size="60"
+            #fileInput name="car_registration_front" hidden>
+    </label>
+    <div class="container" *ngIf="imageUploaded">
+      <img [src]="userImagePath" width="200px" height="200px">
+    </div>
+    
+  </div>
+  
+</div>
+
+<section class="container p-5">
+
+
+    <form #myForm="ngForm" (ngSubmit)="onEnroll(myForm)">
+
+      <!-- photo upload -->
+      
+
+
+      <!-- name  -->
+      <fieldset> 
+        <legend>Basic Details</legend>
+        <div class="row">
+          
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text"  
+                [(ngModel)]="name" required name="name" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label>Name of school:</label>
+              <input type="text"  
+              [(ngModel)]="school" required name="school" class="form-control">
+          </div>
+          </div>   
+        </div>
+      
+        <!-- name end -->
+       
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label>student No:</label>
+                <input type="text"  
+                [(ngModel)]="student_num" required name="student_num" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label>Parent No:</label>
+                <input type="text" [(ngModel)]="parent_num" required name="parent_num" class="form-control">
+            </div>
+          </div>   
+        </div>
+
+        <div class="row">
+          <!-- <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email"  
+                [(ngModel)]="email" required name="email" class="form-control">
+            </div>
+          </div> -->
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label>Create Password:</label>
+                <input type="password" [(ngModel)]="password" required name="password" class="form-control">
+            </div>
+          </div>   
+        </div>
+
+      </fieldset>
+
+
+      <fieldset> 
+        <legend>Course Details</legend>
+
+           <!-- branch selection -->
+    <div class="form-group">
+      <label for="Branch selection">Branch</label>
+      <select class="form-control" [(ngModel)]="branch" name='branch'>
+        <option disabled>Select Branch</option>
+        <option>Kottakal</option>
+        <option>kottor</option>
+        <option>Malappuram</option>
+        <option>Parappur</option>
+        <option>Other</option>
+      </select>
+  </div>
+<!-- branch selection end -->
+
+
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+           
+              <div class="form-group">
+                  <label>Medium:</label>
+                  <select class="form-control" [(ngModel)]="medium" name='medium'>
+                    <option>English</option>
+                    <option>Malayalam</option>
+                    
+                  </select>
+              </div>
+            
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label for="Branch selection">Class</label>
+              <select required class="form-control" [(ngModel)]="class" name='class' (change)="filterPackage(class)">
+                <option >Select your class</option>
+                <option *ngFor="let item of classes">{{item?.class_name}}</option>
+              </select>
+            </div>
+          </div>   
+        </div>
+
+
+       
+
+
+
+   
+
+
+  <!-- Class selection -->
+  
+<!-- class selection end -->
+
+
+
+  <!-- Package selection -->
+  <div class="form-group">
+    <label for="Branch selection">Package</label>
+    <select required class="form-control" [(ngModel)]="package" name='package' (change)="selectedPackage(package)">
+      
+      <option *ngFor="let pack of packages_selected" [value]="pack.id">{{pack.package_name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="Branch selection">Package Cost</label>
+    <input hidden type="text" value="price" name="price" [(ngModel)]="price" readonly>
+    ₹ {{price}}
+  </div>
+<!-- Package selection end -->
+
+</fieldset>
+
+<!-- mode selection -->
+<fieldset> 
+  <legend>Fee Payment </legend>
+<div class="row">
+ 
+<div class="form-check col">
+    <input required class="form-check-input" (change)="paychange('online')" [(ngModel)]="paymenttype" type="radio" name="paymenttype" id="online" value="online" checked>
+    <label class="form-check-label" for="payment">
+      Online
+    </label>
+  </div>
+  <div class="form-check col">
+    <input required class="form-check-input" (change)="paychange('offline')" [(ngModel)]="paymenttype" type="radio" name="paymenttype" id="offline" value="offline">
+    <label class="form-check-label" for="payment">
+      Offline
+    </label>
+  </div>
+</div>
+
+<div *ngIf="paymenttype === 'online'">
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+</div>
+</fieldset>
+
+
+        <div class="container p-5">
+            <button class="btn-en" type="submit" [disabled]="!myForm.valid || !payed">Submit & Complete Registration</button>
+          </div>
+    </form>
+    {{myForm.value | json}}
+</section>
+
+</div>

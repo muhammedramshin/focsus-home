@@ -1,0 +1,92 @@
+<!-- <div>
+    enrolled successfully
+    <br>
+    Order ID : {{id}}
+    <br>
+    Status : {{status}}
+</div> -->
+
+<div class="conatiner p-3"  >
+
+<div class="container outer" id="htmlData" #htmlData>
+    <div style="border-bottom: 1px solid black;">
+    <div class="row p-4" >
+        <div class="col-lg-2">  <img src="assets/focus logo.png" width="50px" height="auto"></div>
+        <div class="col-lg-10"><h4>Focus Tuition Centre</h4></div>
+
+    </div>
+    <h5> Admission Details</h5>
+</div>
+    
+    <div class="container p-3">
+        <img [src]="imgsrc" width="50px" height="50px">
+    </div>
+
+
+        
+
+
+    <table >
+        <tr>
+            <th>Name</th>
+            <td>{{userdata.name}}</td>
+        </tr>
+        <tr>
+            <th>UserID</th>
+            <td>{{userdata.email}}</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>{{userdata.password}}</td>
+        </tr>
+        <tr>
+            <th>Name of School:</th>
+            <td>{{userdata.name_of_school}}</td>
+        </tr>
+        <tr>
+            <th>Student No:</th>
+            <td>{{userdata.student_phone_no}}</td>
+        </tr>
+        <tr>
+            <th>Parent No:</th>
+            <td>{{userdata.parent_phone_no}}</td>
+        </tr>
+        <tr>
+            <th>Class:</th>
+            <td>{{userdata.class}}</td>
+        </tr>
+        <tr>
+            <th>Medium:</th>
+            <td>{{userdata.medium}}</td>
+        </tr>
+        <tr>
+            <th>Package:</th>
+            <td>{{userdata.packageName}}</td>
+        </tr>
+        <tr>
+            <th>Package Cost</th>
+            <td>{{userdata.amount}}</td>
+        </tr>
+        <tr>
+            <th>Payment Mode</th>
+            <td>{{userdata.mode}}</td>
+        </tr>
+        <tr>
+            <th>Tranction ID</th>
+            <td>{{userdata.transactionId}}</td>
+        </tr>
+        <tr>
+            <th>Transaction Status</th>
+            <td>{{userdata.transaction_status}}</td>
+        </tr>
+        
+
+    </table>
+
+</div>
+
+
+</div>
+
+<button style="width: 150px; margin: auto;display: block;" class="btn btn-success btn-block" (click)="openPDF()">Print Form</button>
+

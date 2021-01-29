@@ -1,0 +1,48 @@
+.form-out{
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 2%;
+}
+.uploadfilecontainer{
+    background: #f7f9fc;
+    padding: 7px 0;
+    border: 1px solid #e4e9f2;
+    border-radius: 4px;
+    padding-left: 15px;
+    text-align: left;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    
+    display: block;
+
+    span{
+        color: #929db5;
+        vertical-align: middle;
+        bottom: 0px;
+    }
+}
+
+fieldset
+{
+  background-color:#f7f9fc;
+  border: 1px solid #e4e9f2;
+  padding:16px;	
+}
+legend
+{
+  font-size: 15px;
+}
+
+.btn-en{
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid gray;
+    color: black;
+    font-weight: 600;
+    border-radius: 10px;
+
+}

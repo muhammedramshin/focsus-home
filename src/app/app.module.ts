@@ -8,16 +8,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { NgImageSliderModule } from 'ng-image-slider';
-
+import {FormsModule} from "@angular/forms";
 import { SliderModule } from 'angular-image-slider';
 import { FooterComponent } from './components/footer/footer.component';
+import { EnrollComponent } from './components/enroll/enroll.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { EnrolledComponent } from './components/enrolled/enrolled.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
     FeaturesComponent,
-    FooterComponent
+    FooterComponent,
+    EnrollComponent,
+    EnrolledComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,11 @@ import { FooterComponent } from './components/footer/footer.component';
     NgbModule,
     SliderModule,
     BrowserAnimationsModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    FormsModule,
+    NgxPayPalModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
     
   ],
   providers: [],
